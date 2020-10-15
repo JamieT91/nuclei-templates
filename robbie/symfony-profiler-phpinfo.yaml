@@ -1,0 +1,15 @@
+id: Symfony Profiler PHPInfo
+info:
+  name: Symfony Profiler PHPInfo
+  author: random-robbie
+  severity: medium
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/_profiler/phpinfo"
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "$_SERVER"
+        part: body
